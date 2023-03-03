@@ -28,6 +28,7 @@ def handleFanSpeed(fan, temperature):
     if temperature > MIN_TEMP:
         delta = min(temperature, MAX_TEMP) - MIN_TEMP
         fan.start(FAN_LOW + delta * FAN_GAIN)
+        # print("Temperature: {:05.02f}, Speed: {:05.02f}".format(temperature, FAN_LOW + delta * FAN_GAIN))
 
     elif temperature < OFF_TEMP:
         fan.start(FAN_OFF)
